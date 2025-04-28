@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { PlusCircle, Filter, Search, RefreshCcw } from 'lucide-react';
@@ -22,7 +21,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Badge } from "@/components/ui/badge";
+// Import the Badge from badge-cricket instead of the default badge
+import { Badge } from "@/components/ui/badge-cricket";
 import { format } from 'date-fns';
 import { CreateTournamentDialog } from '@/components/tournaments/CreateTournamentDialog';
 import { useAuth } from '@/hooks/useAuth';
