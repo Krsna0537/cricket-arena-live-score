@@ -26,6 +26,7 @@ import { Badge } from "@/components/ui/badge-cricket";
 import { format } from 'date-fns';
 import { CreateTournamentDialog } from '@/components/tournaments/CreateTournamentDialog';
 import { useAuth } from '@/hooks/useAuth';
+import cricketTournamentImg from "/public/cricket-tournament-hero.jpg";
 
 const Tournaments = () => {
   const { user } = useAuth();
@@ -77,12 +78,29 @@ const Tournaments = () => {
 
   return (
     <div className="space-y-6">
+      {/* Hero Image Section */}
+      <div className="relative h-48 md:h-64 -mx-6 -mt-6 mb-6 overflow-hidden">
+        <img
+          src={cricketTournamentImg}
+          alt="Cricket Tournament"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent">
+          <div className="p-6 h-full flex flex-col justify-end">
+            <h1 className="text-3xl font-bold tracking-tight text-white">Tournaments</h1>
+            <p className="text-gray-200">
+              View all cricket tournaments or create a new one
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Filters */}
       <div className="flex flex-col md:flex-row justify-between gap-4 items-start md:items-center">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Tournaments</h1>
-          <p className="text-muted-foreground">
-            View all cricket tournaments or create a new one
-          </p>
+          <div className="flex flex-col md:flex-row justify-between gap-4 items-start md:items-center">
+            
+          </div>
         </div>
         <div className="flex gap-2">
           <Button 

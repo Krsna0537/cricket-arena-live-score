@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge-cricket";
 import {
@@ -15,6 +14,7 @@ import StatsCard from "@/components/cricket/StatsCard";
 import { CalendarCheck, Calendar, Users, Trophy, Award, BarChart2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
+import cricketStadiumImg from "/public/cricket-stadium-dashboard.jpg";
 
 const Dashboard = () => {
   const { 
@@ -67,6 +67,23 @@ const Dashboard = () => {
 
   return (
     <div className="space-y-6">
+      {/* Hero Image Section */}
+      <div className="relative h-48 md:h-64 -mx-6 -mt-6 mb-6 overflow-hidden">
+        <img
+          src={cricketStadiumImg}
+          alt="Cricket Stadium"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent">
+          <div className="p-6 h-full flex flex-col justify-end">
+            <h1 className="text-3xl font-bold tracking-tight text-white">Dashboard</h1>
+            <p className="text-gray-200">
+              Welcome to Cricket Arena - Manage your cricket tournaments with ease.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
