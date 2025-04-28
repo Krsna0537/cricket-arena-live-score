@@ -8,6 +8,7 @@ import { CricketProvider } from "./context/CricketContext";
 import MainLayout from "./components/layout/MainLayout";
 import Dashboard from "./pages/Dashboard";
 import LiveMatches from "./pages/LiveMatches";
+import Tournaments from "./pages/Tournaments";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,11 @@ const App = () => (
             <Route path="/live" element={
               <MainLayout>
                 <LiveMatches />
+              </MainLayout>
+            } />
+            <Route path="/tournaments" element={
+              <MainLayout>
+                <Tournaments />
               </MainLayout>
             } />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
