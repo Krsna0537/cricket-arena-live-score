@@ -1,11 +1,12 @@
+
 import { useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { fetchLiveMatches } from '@/services/matchService';
-import { Match } from '@/integrations/supabase/database.types';
+import { Match } from '@/types/cricket';
 import LiveScoreCard from '@/components/cricket/LiveScoreCard';
 import { Button } from "@/components/ui/button";
 import { RefreshCcw } from 'lucide-react';
-import cricketMatchImg from "/public/cricket-match-live.jpg";
+import cricketMatchImg from "/cricket-match-live.jpg";
 
 const LiveMatches = () => {
   const { data: liveMatches, isLoading, isError, refetch } = useQuery({
@@ -21,6 +22,8 @@ const LiveMatches = () => {
   if (isError) {
     return <div>Error loading live matches.</div>;
   }
+
+  const matches = liveMatches as Match[] || [];
 
   return (
     <div className="space-y-6">
@@ -57,9 +60,9 @@ const LiveMatches = () => {
         </Button>
       </div>
 
-      {liveMatches && liveMatches.length > 0 ? (
+      {matches.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {liveMatches.map((match: Match) => (
+          {matches.map((match: Match) => (
             <LiveScoreCard key={match.id} match={match} />
           ))}
         </div>
