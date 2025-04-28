@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -24,6 +25,19 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				cricket: {
+					'50': '#f0fdf4',
+					'100': '#dcfce7',
+					'200': '#bbf7d0',
+					'300': '#86efac',
+					'400': '#4ade80',
+					'500': '#22c55e',
+					'600': '#16a34a',
+					'700': '#15803d',
+					'800': '#166534',
+					'900': '#14532d',
+					'950': '#052e16',
+				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
@@ -70,25 +84,27 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
+				},
+				'live-pulse': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.5' }
+				},
+				'score-update': {
+					'0%': { backgroundColor: 'rgba(34, 197, 94, 0.3)' },
+					'100%': { backgroundColor: 'transparent' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'live-pulse': 'live-pulse 2s ease-in-out infinite',
+				'score-update': 'score-update 1s ease-out'
 			}
 		}
 	},
